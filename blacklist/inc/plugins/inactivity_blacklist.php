@@ -115,47 +115,47 @@ function inactivity_blacklist_install()
 			'value' => '90', 
 			'disporder' => 3
         ],
-        'login_days' 		=> [
-            'title'         => $db->escape_string($lang->setting_inactivity_blacklist_login_days),
-            'description'   => $db->escape_string($lang->setting_inactivity_blacklist_login_days_desc),
-            'optionscode'   => 'numeric', 
-			'value' 		=> '90', 
-			'disporder' 	=> 4
-        ],
         'excluded_uids' 	=> [
             'title'         => $db->escape_string($lang->setting_inactivity_blacklist_excluded_uids),
             'description'   => $db->escape_string($lang->setting_inactivity_blacklist_excluded_uids_desc),
             'optionscode'   => 'text', 
-			'value' 		=> '1,8,35', 
-			'disporder' 	=> 5
+			'value' 		=> '1,8,17,35,41', 
+			'disporder' 	=> 4
         ],
         'post_fid' 			=> [
             'title'         => $db->escape_string($lang->setting_inactivity_blacklist_post_fid),
             'description'   => $db->escape_string($lang->setting_inactivity_blacklist_post_fid_desc),
             'optionscode'   => 'forumselectsingle', 
 			'value' 		=> '', 
-			'disporder' 	=> 6
+			'disporder' 	=> 5
         ],
         'poster_uid' 		=> [
             'title'         => $db->escape_string($lang->setting_inactivity_blacklist_poster_uid),
             'description'   => $db->escape_string($lang->setting_inactivity_blacklist_poster_uid_desc),
             'optionscode'   => 'numeric', 
 			'value'			=> '1', 
-			'disporder' 	=> 7
+			'disporder' 	=> 6
         ],
         'admin_uids' => [
             'title'         => $db->escape_string($lang->setting_inactivity_blacklist_admin_uids),
             'description'   => $db->escape_string($lang->inactivity_blacklist_admin_uids_desc),
             'optionscode'   => 'text', 
 			'value' 		=> '1', 
-			'disporder'		=> 8
+			'disporder'		=> 7
         ],
         'inactive_group' 	=> [
             'title'       	=> $db->escape_string($lang->setting_inactivity_blacklist_inactive_group),
             'description' 	=> $db->escape_string($lang->setting_inactivity_blacklist_inactive_group_desc),
             'optionscode' 	=> 'groupselectsingle',
-			'value'		  	=> '',
-            'disporder'   	=> 9
+			'value'		  	=> '21',
+            'disporder'   	=> 8
+        ],
+		'applicant_group' => [
+            'title'         => $db->escape_string($lang->setting_inactivity_blacklist_applicant_group),
+            'description'   => $db->escape_string($lang->setting_inactivity_blacklist_applicant_group_desc),
+            'optionscode'   => 'groupselectsingle',
+            'value'         => '2', // Bleibt leer, musst du im ACP setzen
+            'disporder'     => 9
         ],
         'grace_period' 		=> [
             'title'       	=> $db->escape_string($lang->setting_inactivity_blacklist_grace_period),
@@ -164,13 +164,15 @@ function inactivity_blacklist_install()
             'value'       	=> '14',
             'disporder'   	=> 10
         ],
-        'check_partner' 	=> [
-            'title'       	=> $db->escape_string($lang->setting_inactivity_blacklist_check_partner),
-            'description' 	=> $db->escape_string($lang->setting_inactivity_blacklist_check_partner_desc),
-            'optionscode' 	=> 'yesno',
-            'value'       	=> '1', // Standardmäßig aktiviert
-            'disporder'   	=> 11
+		// ########## NEUE EINSTELLUNG START ##########
+        'response_grace_period' => [
+            'title'         => $db->escape_string($lang->setting_inactivity_blacklist_response_grace_period),
+            'description'   => $db->escape_string($lang->setting_inactivity_blacklist_response_grace_period_desc),
+            'optionscode'   => 'numeric',
+            'value'         => '14', // Standard: 14 Tage Zeit zum Antworten
+            'disporder'     => 11
         ],
+        // ########## NEUE EINSTELLUNG ENDE ##########		
         'debug_mode'    	=> [
 			'title' 		=> $db->escape_string($lang->setting_inactivity_blacklist_debug_mode),     
 			'description' 	=> $db->escape_string($lang->setting_inactivity_blacklist_debug_mode_desc),     

@@ -4,7 +4,7 @@
  */
 
 // NEU: Texte für den Blacklist-Post im Forum
-$l['inactivity_blacklist_post_title'] = "Inaktivitäts-Update vom {1}";
+$l['inactivity_blacklist_post_title'] = "Inaktivitäts-Update von {1}";
 $l['inactivity_blacklist_post_message'] = "Folgende Benutzer wurden aufgrund von Inaktivität ins Wartezimmer verschoben und haben nun zwei Wochen Zeit, sich zurückzumelden, bevor ihr Account zur Löschung vorgeschlagen wird:\n\n[list]\n[*]{1}[/list]";
 
 
